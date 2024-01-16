@@ -50,11 +50,20 @@ function quizQuestions() {
   var answers = questions[0].answers;
   for (i = 0; i < answers.length; i++) {
     var answerBtn = document.createElement('button');
+    answerBtn.addEventListener('click', checkAnswer)
     answerBtn.innerHTML = answers[i];
+
     choices.appendChild(answerBtn);
   }
 }
 
+function checkAnswer() {
+  var correctAnswer = questions[0].correctAnswer;
+  // console.log(correctAnswer);
+
+  var correctAudio = document.getElementById('correct-audio');
+  correctAudio.play();
+}
 // Questions contain buttons for each answer.
 
 // for
