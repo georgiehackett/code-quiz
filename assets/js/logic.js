@@ -60,9 +60,15 @@ function quizQuestions() {
 function checkAnswer() {
   var correctAnswer = questions[0].correctAnswer;
   // console.log(correctAnswer);
+  console.log(event.target.innerHTML);
 
+  if (event.target.innerHTML === correctAnswer) {
   var correctAudio = document.getElementById('correct-audio');
   correctAudio.play();
+  } else {
+    var incorrectAudio = document.getElementById('incorrect-audio');
+    incorrectAudio.play();
+  }
 }
 // Questions contain buttons for each answer.
 
