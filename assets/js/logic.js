@@ -37,11 +37,11 @@ function timerDecrease() {
   }
 };
 
-console.log(questions);
-console.log(questions[0]);
-console.log(questions[0].question);
-console.log(questions[0].answers);
-console.log(questions.length);
+// console.log(questions);
+// console.log(questions[0]);
+// console.log(questions[0].question);
+// console.log(questions[0].answers);
+// console.log(questions.length);
 
 function quizQuestions() {
   var question = questions[0].question;
@@ -56,18 +56,23 @@ function quizQuestions() {
     choices.appendChild(answerBtn);
   }
 }
+var score = 0;
 
 function checkAnswer() {
   var correctAnswer = questions[0].correctAnswer;
   // console.log(correctAnswer);
-  console.log(event.target.innerHTML);
+  // console.log(event.target.innerHTML);
 
   if (event.target.innerHTML === correctAnswer) {
   var correctAudio = document.getElementById('correct-audio');
   correctAudio.play();
+  score++
+  console.log(score);
   } else {
     var incorrectAudio = document.getElementById('incorrect-audio');
     incorrectAudio.play();
+    score--
+    console.log(score);
   }
 }
 // Questions contain buttons for each answer.
