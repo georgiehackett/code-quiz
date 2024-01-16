@@ -4,6 +4,8 @@ var questionsDiv = document.getElementById("questions");
 var questionTitle = document.getElementById("question-title");
 var choices = document.getElementById("choices");
 
+// console.log(choices);
+
 timeLeft = 75;
 
 // hide start screen when start button is pressed and start timer
@@ -14,7 +16,7 @@ function startQuiz() {
   var startScreen = document.getElementById("start-screen");
   startScreen.classList.add("hide");
   questionsDiv.classList.remove("hide");
-
+  quizQuestions()
   countDown();
 }
 
@@ -34,6 +36,24 @@ function timerDecrease() {
     setTime();
   }
 };
+
+console.log(questions);
+console.log(questions[0]);
+console.log(questions[0].question);
+console.log(questions[0].answers);
+console.log(questions.length);
+
+function quizQuestions() {
+  var question = questions[0].question;
+  questionTitle.textContent = question;
+
+  var answers = questions[0].answers;
+  for (i = 0; i < answers.length; i++) {
+    var answerBtn = document.createElement('button');
+    answerBtn.innerHTML = answers[i];
+    choices.appendChild(answerBtn);
+  }
+}
 
 // Questions contain buttons for each answer.
 
