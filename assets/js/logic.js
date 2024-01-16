@@ -4,6 +4,7 @@ var questionsDiv = document.getElementById("questions");
 var questionTitle = document.getElementById("question-title");
 var choices = document.getElementById("choices");
 
+var currentIndex = 0;
 // console.log(choices);
 
 timeLeft = 75;
@@ -16,7 +17,7 @@ function startQuiz() {
   var startScreen = document.getElementById("start-screen");
   startScreen.classList.add("hide");
   questionsDiv.classList.remove("hide");
-  quizQuestions()
+  quizQuestions(currentIndex);
   countDown();
 }
 
@@ -43,11 +44,11 @@ function timerDecrease() {
 // console.log(questions[0].answers);
 // console.log(questions.length);
 
-function quizQuestions() {
-  var question = questions[0].question;
+function quizQuestions(index) {
+  var question = questions[index].question;
   questionTitle.textContent = question;
 
-  var answers = questions[0].answers;
+  var answers = questions[index].answers;
   for (i = 0; i < answers.length; i++) {
     var answerBtn = document.createElement('button');
     answerBtn.addEventListener('click', checkAnswer)
@@ -59,7 +60,7 @@ function quizQuestions() {
 var score = 0;
 
 function checkAnswer() {
-  var correctAnswer = questions[0].correctAnswer;
+  var correctAnswer = questions[currentIndex].correctAnswer;
   // console.log(correctAnswer);
   // console.log(event.target.innerHTML);
 
@@ -67,13 +68,15 @@ function checkAnswer() {
   var correctAudio = document.getElementById('correct-audio');
   correctAudio.play();
   score++
-  console.log(score);
+  // console.log(score);
   } else {
     var incorrectAudio = document.getElementById('incorrect-audio');
     incorrectAudio.play();
     score--
-    console.log(score);
+    // console.log(score);
   }
+  currentIndex++
+  quizQuestions(currentIndex);
 }
 // Questions contain buttons for each answer.
 
