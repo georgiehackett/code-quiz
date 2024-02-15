@@ -88,3 +88,21 @@ function endQuiz() {
   var finalScoreEl = document.getElementById('final-score');
   finalScoreEl.textContent = score;
 }
+
+document.getElementById('submit').addEventListener("click", sumbitScore);
+
+function sumbitScore() {
+  var initials = document.getElementById('initials').value;
+  
+  var finalScore = {
+    initials: initials,
+    score: score,
+  }
+
+  var highscores = [];
+
+  highscores.push(finalScore);
+
+  localStorage.setItem("highscores", JSON.stringify(highscores));
+  
+}
