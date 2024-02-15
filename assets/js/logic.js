@@ -85,27 +85,26 @@ function endQuiz() {
   questionsDiv.classList.add("hide");
   endScreen.classList.remove("hide");
 
-  var finalScoreEl = document.getElementById('final-score');
+  var finalScoreEl = document.getElementById("final-score");
   finalScoreEl.textContent = score;
 }
 
-document.getElementById('submit').addEventListener("click", sumbitScore);
+document.getElementById("submit").addEventListener("click", sumbitScore);
 
 function sumbitScore() {
-  var initials = document.getElementById('initials').value;
-  
+  var initials = document.getElementById("initials").value;
+
   var finalScore = {
     initials: initials,
     score: score,
-  }
-  
+  };
+
   var highscores = JSON.parse(localStorage.getItem("highscores"));
   if (!highscores) {
     var highscores = [];
-  };
+  }
 
   highscores.push(finalScore);
 
   localStorage.setItem("highscores", JSON.stringify(highscores));
-  
 }
