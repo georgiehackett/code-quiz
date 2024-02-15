@@ -4,7 +4,7 @@ var questionsDiv = document.getElementById("questions");
 var questionTitle = document.getElementById("question-title");
 var choices = document.getElementById("choices");
 var endScreen = document.getElementById("end-screen");
-
+// console.log(endScreen);
 var currentIndex = 0;
 // console.log(choices);
 
@@ -36,6 +36,8 @@ function timerDecrease() {
   if (timeLeft > 0) {
     timeLeft--;
     setTime();
+  } else {
+    endQuiz();
   }
 }
 
@@ -67,13 +69,19 @@ function checkAnswer() {
     score--;
     timeLeft -= 10;
   }
-    
-  if (currentIndex < questions.length && timeLeft > 0) {
-    choices.innerHTML = "";
-    currentIndex++;
-    quizQuestions(currentIndex);
+  console.log(currentIndex);
+  if (currentIndex === (questions.length - 1)) {
+    endQuiz();
   } else {
-    questionsDiv.classList.add("hide") ;
-    endScreen.classList.remove("hide");
+    currentIndex++;
+    choices.innerHTML = "";
+    quizQuestions(currentIndex);
   }
+}
+
+function endQuiz() {
+  timeLeft = 0;
+
+  questionsDiv.classList.add("hide");
+  endScreen.classList.remove("hide");
 }
