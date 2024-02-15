@@ -98,8 +98,11 @@ function sumbitScore() {
     initials: initials,
     score: score,
   }
-
-  var highscores = [];
+  
+  var highscores = JSON.parse(localStorage.getItem("highscores"));
+  if (!highscores) {
+    var highscores = [];
+  };
 
   highscores.push(finalScore);
 
