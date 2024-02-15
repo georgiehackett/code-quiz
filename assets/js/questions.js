@@ -25,7 +25,7 @@ var questions = [
     },
 
     {
-        question: 'What does the '===' operator check for in JavaScript?',
+        question: 'What does the === operator check for in JavaScript?',
 
         answers: [
             'a) Checks for equality in value but not data type',
