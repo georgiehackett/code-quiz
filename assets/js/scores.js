@@ -4,7 +4,7 @@ var highscoresEl = document.getElementById("highscores");
 console.log(highscoresEl);
 
 function displayScores() {
-  console.log("howdy");
+
   var highscores = JSON.parse(localStorage.getItem("highscores"));
   console.log(highscores);
 
@@ -22,5 +22,5 @@ clearBtn.addEventListener("click", clearScores);
 
 function clearScores() {
     localStorage.removeItem("highscores")
-    console.log(JSON.parse(localStorage.getItem("highscores")));
+    highscoresEl.innerHTML = "";
 }
