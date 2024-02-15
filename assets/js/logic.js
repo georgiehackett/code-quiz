@@ -72,12 +72,15 @@ function checkAnswer() {
   } else {
     var incorrectAudio = document.getElementById('incorrect-audio');
     incorrectAudio.play();
-    score--
+    score--;
+    timeLeft -= 10;
     // console.log(score);
   }
   currentIndex++
   quizQuestions(currentIndex);
 }
+
+// !!!!!!!!!!!! empty inner html q title and choices to empty previous choices
 // Questions contain buttons for each answer.
 
 // for
