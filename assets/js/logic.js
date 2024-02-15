@@ -70,7 +70,7 @@ function checkAnswer() {
     timeLeft -= 10;
   }
   console.log(currentIndex);
-  if (currentIndex === (questions.length - 1)) {
+  if (currentIndex === questions.length - 1) {
     endQuiz();
   } else {
     currentIndex++;
@@ -84,4 +84,7 @@ function endQuiz() {
 
   questionsDiv.classList.add("hide");
   endScreen.classList.remove("hide");
+
+  var finalScoreEl = document.getElementById('final-score');
+  finalScoreEl.textContent = score;
 }
