@@ -4,9 +4,10 @@ var questionsDiv = document.getElementById("questions");
 var questionTitle = document.getElementById("question-title");
 var choices = document.getElementById("choices");
 var endScreen = document.getElementById("end-screen");
-// console.log(endScreen);
+var feedbackEl = document.getElementById('feedback');
+
 var currentIndex = 0;
-// console.log(choices);
+
 
 timeLeft = 75;
 
@@ -57,23 +58,30 @@ function quizQuestions(index) {
 var score = 0;
 
 function checkAnswer() {
+  feedbackEl.innerText = "";
   var correctAnswer = questions[currentIndex].correctAnswer;
 
   if (event.target.innerHTML === correctAnswer) {
+    feedbackEl.classList.remove("hide");
     var correctAudio = document.getElementById("correct-audio");
     correctAudio.play();
+    feedbackEl.innerText = "Correct!"
     score++;
   } else {
+    feedbackEl.classList.remove("hide");
     var incorrectAudio = document.getElementById("incorrect-audio");
     incorrectAudio.play();
+    feedbackEl.innerText = 'Incorrect!'
     score--;
     timeLeft -= 10;
   }
   console.log(currentIndex);
   if (currentIndex === questions.length - 1) {
+    feedbackEl.classList.add("hide");
     endQuiz();
   } else {
     currentIndex++;
+    // feedbackEl.classList.add("hide");
     choices.innerHTML = "";
     quizQuestions(currentIndex);
   }
