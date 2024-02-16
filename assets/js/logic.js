@@ -115,4 +115,5 @@ function sumbitScore() {
   highscores.push(finalScore);
 
   localStorage.setItem("highscores", JSON.stringify(highscores));
+  location.href = "././highscores.html";
 }
