@@ -25,7 +25,7 @@ var questions = [
     },
 
     {
-        question: 'What does the '===' operator check for in JavaScript?',
+        question: 'What does the === operator check for in JavaScript?',
 
         answers: [
             'a) Checks for equality in value but not data type',
@@ -37,6 +37,71 @@ var questions = [
         correctAnswer: 'b) Checks for equality in both value and data type'
     },
 
+    {
+        question: 'Which method is used to add an element to the end of an array?',
+
+        answers: [
+            'a) shift()',
+            'b) unshift()',
+            'c) pop()',            
+            'd) push()'
+        ],
+
+        correctAnswer: 'd) push()'
+    },
+
+    {
+        question: 'What does the setTimeout() function do in JavaScript?',
+
+        answers: [
+            'a) Delays the execution of a function for a specified number of milliseconds',
+            'b) Repeats the execution of a function at specified intervals',
+            'c) Executes a function immediately',
+            'd) Halts the execution of a function indefinitely',
+        ],
+
+        correctAnswer: 'a) Delays the execution of a function for a specified number of milliseconds'
+    },
+
+    {
+        question: 'Which of the following is NOT a primitive data type in JavaScript?',
+
+        answers: [
+            'a) boolean',
+            'b) string',
+            'c) array',
+            'd) number'
+        ],
+
+        correctAnswer: 'c) array'
+    },
+
+    {
+        question: 'Which method is used to remove the last element from an array?',
+
+        answers: [
+            'a) slice()',
+            'b) splice()',
+            'c) pop()',
+            'd) shift()'
+        ],
+
+        correctAnswer: 'c) pop()'
+    },
+    
+    {
+        question: 'What is the result of typeof null in JavaScript?',
+
+        answers: [
+            'a) "null"',
+            'b) "object"',
+            'c) "undefined"',
+            'd) "number"'
+        ],
+
+        correctAnswer: 'b) "object"'
+    },
+
     // {
     //     question:
 
@@ -45,6 +110,7 @@ var questions = [
 
     //     correctAnswer:
     // },
+       
 ];
 
 
